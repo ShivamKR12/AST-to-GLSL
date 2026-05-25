@@ -1,0 +1,55 @@
+PS D:\AST-to-GLSL> ls        
+
+
+    Directory: D:\AST-to-GLSL
+
+
+Mode                 LastWriteTime         Length Name                                                                                     
+----                 -------------         ------ ----                                                                                     
+-a----         5/25/2026  11:41 AM          12659 main.py                                                                                  
+-a----          5/2/2025  10:10 PM          12296 message.txt                                                                              
+-a----         5/25/2026  11:43 AM            731 README.md                                                                                
+
+
+PS D:\AST-to-GLSL> python kain.py
+C:\Users\Shivam\AppData\Local\Programs\Python\Python313\python.exe: can't open file 'D:\\AST-to-GLSL\\kain.py': [Errno 2] No such file or directory
+PS D:\AST-to-GLSL> python main.py
+info: Using primary monitor: Monitor(x=0, y=0, width=1366, height=768, width_mm=344, height_mm=193, name='\\\\.\\DISPLAY1', is_primary=True)
+:prc(warning): Invalid floating-point value for ConfigVariable undecorated: None
+:prc(warning): Invalid bool value for ConfigVariable undecorated: None
+Known pipe types:
+  wglGraphicsPipe
+(3 aux display modules not yet loaded.)
+set window position: Vec2(283, 84)
+:prc(warning): changing default value for ConfigVariable paste-emit-keystrokes from '1' to '0'.
+:pnmimage:png(warning): iCCP: known incorrect sRGB profile
+package_folder: C:\Users\Shivam\AppData\Local\Programs\Python\Python313\Lib\site-packages\ursina
+asset_folder: .
+#version 150 // Vertex Shader
+
+uniform mat4 p3d_ModelViewProjectionMatrix;
+in vec4 p3d_Vertex;
+in vec2 p3d_MultiTexCoord0;
+out vec2 uv;
+
+void main() {
+    gl_Position = p3d_ModelViewProjectionMatrix * p3d_Vertex;
+    uv = p3d_MultiTexCoord0;
+}
+
+#version 150 // Fragment Shader
+
+uniform sampler2D p3d_Texture0;
+in vec2 uv;
+
+void main() {
+    gl_FragColor = texture(p3d_Texture0, uv) * vec4(uv.x, uv.y, uv.x * uv.y, 1.0);
+}
+
+:pnmimage:png(warning): iCCP: known incorrect sRGB profile
+os: Windows
+development mode: True
+application successfully started
+info: changed aspect ratio: 1.333 -> 1.333
+:display:windisplay(warning): Could not find icon filename textures/ursina.ico
+PS D:\AST-to-GLSL> 
