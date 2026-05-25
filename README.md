@@ -21,3 +21,5 @@ Known issues:
 - No loops/functions/scopes/etc.
 
 Preserved mostly as a memory and a snapshot of how I was thinking at the time.
+
+![screenshot](./screenshot.png)
